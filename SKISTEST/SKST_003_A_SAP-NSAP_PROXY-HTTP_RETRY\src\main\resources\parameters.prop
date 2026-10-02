@@ -1,0 +1,9 @@
+#Wed May 28 05:14:03 UTC 2025
+Authorization=
+RECV_TIMEOUT=300000
+RETRY_DS_NAME=SKST_003_A_SAP-NSAP_PROXY-HTTP_RETRY
+LOCATION_ID=
+RECV_HOST=https\://sa-dev-tmjypo45.it-cpi015-rt.cfapps.ap12.hana.ondemand.com/http/SKST_004
+ENTRY_NAME=
+Content-Type=application/json; charset\=utf-8
+RECV_HTTP_HEADERS=Content-Type|Accept

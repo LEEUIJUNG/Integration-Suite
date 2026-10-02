@@ -1,0 +1,7 @@
+#Tue Oct 15 01:08:35 UTC 2024
+Authorization=
+RECV_TIMEOUT=300000
+payload_step=G_PAYLOAD_STEP
+RECV_HOST=http\://sa-dev-tmjypo45.it-cpi015-rt.cfapps.ap12.hana.ondemand.com
+LOCATION_ID=CCD
+Content-Type=application/xml; charset\=utf-8

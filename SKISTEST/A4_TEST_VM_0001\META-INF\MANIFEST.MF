@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: A4_TEST_VM_0001
+Bundle-SymbolicName: A4_TEST_VM_0001
+Bundle-Version: 1.0.0
+SAP-BundleType: ValueMapping
+SAP-NodeType: IFLMAP
+Import-Package: com.sap.xi.mapping.camel.valmap
+Bundle-Activator: com.sap.xi.mapping.camel.valmap.ValueMappingActivator
+Origin-Bundle-Name: A4_TEST_VM_0001
+Origin-Bundle-Version: 1.0.0
+Origin-Bundle-SymbolicName: A4_TEST_VM_0001
+Origin-ModifiedDate: 1767601466226
+

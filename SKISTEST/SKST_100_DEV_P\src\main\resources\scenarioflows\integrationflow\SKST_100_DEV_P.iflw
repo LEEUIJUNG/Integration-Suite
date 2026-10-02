@@ -1,0 +1,400 @@
+<?xml version="1.0" encoding="UTF-8"?><bpmn2:definitions xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:ifl="http:///com.sap.ifl.model/Ifl.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_1">
+    <bpmn2:collaboration id="Collaboration_1" name="Default Collaboration">
+        <bpmn2:extensionElements>
+            <ifl:property>
+                <key>namespaceMapping</key>
+                <value/>
+            </ifl:property>
+            <ifl:property>
+                <key>httpSessionHandling</key>
+                <value>None</value>
+            </ifl:property>
+            <ifl:property>
+                <key>accessControlMaxAge</key>
+                <value/>
+            </ifl:property>
+            <ifl:property>
+                <key>returnExceptionToSender</key>
+                <value>false</value>
+            </ifl:property>
+            <ifl:property>
+                <key>log</key>
+                <value>All events</value>
+            </ifl:property>
+            <ifl:property>
+                <key>corsEnabled</key>
+                <value>false</value>
+            </ifl:property>
+            <ifl:property>
+                <key>exposedHeaders</key>
+                <value/>
+            </ifl:property>
+            <ifl:property>
+                <key>componentVersion</key>
+                <value>1.2</value>
+            </ifl:property>
+            <ifl:property>
+                <key>allowedHeaderList</key>
+                <value/>
+            </ifl:property>
+            <ifl:property>
+                <key>ServerTrace</key>
+                <value>false</value>
+            </ifl:property>
+            <ifl:property>
+                <key>allowedOrigins</key>
+                <value/>
+            </ifl:property>
+            <ifl:property>
+                <key>accessControlAllowCredentials</key>
+                <value>false</value>
+            </ifl:property>
+            <ifl:property>
+                <key>allowedHeaders</key>
+                <value/>
+            </ifl:property>
+            <ifl:property>
+                <key>allowedMethods</key>
+                <value/>
+            </ifl:property>
+            <ifl:property>
+                <key>cmdVariantUri</key>
+                <value>ctype::IFlowVariant/cname::IFlowConfiguration/version::1.2.4</value>
+            </ifl:property>
+        </bpmn2:extensionElements>
+        <bpmn2:participant id="Participant_Process_1" ifl:type="IntegrationProcess" name="Integration Process" processRef="Process_1">
+            <bpmn2:extensionElements/>
+        </bpmn2:participant>
+    </bpmn2:collaboration>
+    <bpmn2:process id="Process_1" name="Integration Process">
+        <bpmn2:extensionElements>
+            <ifl:property>
+                <key>transactionTimeout</key>
+                <value>30</value>
+            </ifl:property>
+            <ifl:property>
+                <key>componentVersion</key>
+                <value>1.2</value>
+            </ifl:property>
+            <ifl:property>
+                <key>cmdVariantUri</key>
+                <value>ctype::FlowElementVariant/cname::IntegrationProcess/version::1.2.1</value>
+            </ifl:property>
+            <ifl:property>
+                <key>transactionalHandling</key>
+                <value>Not Required</value>
+            </ifl:property>
+        </bpmn2:extensionElements>
+        <bpmn2:startEvent id="StartEvent_2" name="Start">
+            <bpmn2:extensionElements>
+                <ifl:property>
+                    <key>componentVersion</key>
+                    <value>1.0</value>
+                </ifl:property>
+                <ifl:property>
+                    <key>cmdVariantUri</key>
+                    <value>ctype::FlowstepVariant/cname::MessageStartEvent/version::1.0</value>
+                </ifl:property>
+            </bpmn2:extensionElements>
+            <bpmn2:outgoing>SequenceFlow_3</bpmn2:outgoing>
+            <bpmn2:messageEventDefinition/>
+        </bpmn2:startEvent>
+        <bpmn2:endEvent id="EndEvent_2" name="End">
+            <bpmn2:extensionElements>
+                <ifl:property>
+                    <key>componentVersion</key>
+                    <value>1.1</value>
+                </ifl:property>
+                <ifl:property>
+                    <key>cmdVariantUri</key>
+                    <value>ctype::FlowstepVariant/cname::MessageEndEvent/version::1.1.0</value>
+                </ifl:property>
+            </bpmn2:extensionElements>
+            <bpmn2:incoming>SequenceFlow_7</bpmn2:incoming>
+            <bpmn2:messageEventDefinition/>
+        </bpmn2:endEvent>
+        <bpmn2:callActivity id="CallActivity_72" name="SYS Code">
+            <bpmn2:extensionElements>
+                <ifl:property>
+                    <key>bodyType</key>
+                    <value>constant</value>
+                </ifl:property>
+                <ifl:property>
+                    <key>propertyTable</key>
+                    <value/>
+                </ifl:property>
+                <ifl:property>
+                    <key>headerTable</key>
+                    <value/>
+                </ifl:property>
+                <ifl:property>
+                    <key>wrapContent</key>
+                    <value>***ERP
+MMPR	구매​
+MMMA	자재​
+CSAS	AS​
+FIAR	청구​
+FICA	수금​
+FIAP	세무​
+FITR	자금​
+FIFI	회계​
+COPS	프로젝트​
+COCO	관리​
+
+****Legacy 전체
+인사정보시스템(HR)	SDIN
+영업지원시스템	ARGS
+영업시스템(BTP)	GOST
+전자구매시스템	BYTK
+전자세금계산서 시스템	SEDI
+지로 청구서 발행	FUBL
+자재시스템(BTP Web)	BCDW
+자재시스템(App)	BCDA
+캡스홈 요금조회 APP	CHMA
+사이버가드 온라인구독 WEB	CGDW
+쉴더스 홈페이지	SDTC
+캡스홈 설치 배정관리 Web	CHMR
+공사관리시스템(BTP)	BCNW
+캡스클린케어(BTP)	CCCW
+개인비용 처리 APP	ANYA
+도이치은행 가상계좌	DBVA
+효성FMS	HFMS
+쿠콘(현대카드 통합필요)	CCON
+토스페이먼츠	TOSP
+나이스페이먼츠	NICP
+나이스신용정보	NICC
+MG수납센터	MGRC
+F&amp;U수납센터	FURC
+도이치 실시간 입금	DBRD
+Tmap Van사 연동 시스템(결제 내역)	TMPV
+KEB하나은행 CMS	KEBC
+펌뱅킹	FRMB
+SMARTRO주차VAN	SROV
+KPN주차VAN	KPNV
+IGP.SKSHIELDUS.COM	IGPS
+BLUE MASTER	BMTR
+Blue Force	BFCE
+고객센터	CSCR
+Tele Pro	TLPR
+KG모빌리언스	KGMB
+e-accounting</value>
+                </ifl:property>
+                <ifl:property>
+                    <key>componentVersion</key>
+                    <value>1.6</value>
+                </ifl:property>
+                <ifl:property>
+                    <key>activityType</key>
+                    <value>Enricher</value>
+                </ifl:property>
+                <ifl:property>
+                    <key>cmdVariantUri</key>
+                    <value>ctype::FlowstepVariant/cname::Enricher/version::1.6.0</value>
+                </ifl:property>
+            </bpmn2:extensionElements>
+        </bpmn2:callActivity>
+        <bpmn2:callActivity id="CallActivity_4" name="개발개요">
+            <bpmn2:extensionElements>
+                <ifl:property>
+                    <key>bodyType</key>
+                    <value>constant</value>
+                </ifl:property>
+                <ifl:property>
+                    <key>propertyTable</key>
+                    <value/>
+                </ifl:property>
+                <ifl:property>
+                    <key>headerTable</key>
+                    <value/>
+                </ifl:property>
+                <ifl:property>
+                    <key>wrapContent</key>
+                    <value>개발 절차
+
+- 투입 기간 : 1-5월
+- 1일 2본(변동 가능)
+- 개발 완료 후 팀즈에 완료 회신(팀즈방 생성 예정)
+  *백 오피스 지원이지만 실제로 풀M/M 투입임
+  -&gt; 프로젝트 투입과 동일한 상황, 개발 일정 차질 없게 개인적으로 버퍼 챙기기
+
+1. REST2PROXY, PROXY2REST 케이스만 있음
+2. REST Sender URL  = /업무구분 코드/인터페이스ID/RFC 명
+ex) cm/MMMA_011/RFC_MM991
+업무 코드(레가시 시스템 기준, 소문자) : cm-공통, sp-통합영역, cs-설치/AS, ma-자재, ap-제휴포털
+3.iflow desc에 [rfc명]인터페이스 상세 설명
+4. Rest Sender NS 사용 안함
+5. 그외 기본적인 룰 Json Array등 일괄 적용
+
+6.버전관리 요약
+예시) 
+ - 최초 버전(개발완료시) : 0.1.0
+ -&gt; 버그 수정: 0.1.1(개발시 휴먼에러 같은 이유로는 올릴 필요 없음)
+ -&gt; 필드 추가: 0.2.1
+ - 테스트 완료 : 1.0.0
+ -&gt; 버전 업시 desc 작성</value>
+                </ifl:property>
+                <ifl:property>
+                    <key>componentVersion</key>
+                    <value>1.6</value>
+                </ifl:property>
+                <ifl:property>
+                    <key>activityType</key>
+                    <value>Enricher</value>
+                </ifl:property>
+                <ifl:property>
+                    <key>cmdVariantUri</key>
+                    <value>ctype::FlowstepVariant/cname::Enricher/version::1.6.0</value>
+                </ifl:property>
+            </bpmn2:extensionElements>
+            <bpmn2:incoming>SequenceFlow_3</bpmn2:incoming>
+            <bpmn2:outgoing>SequenceFlow_5</bpmn2:outgoing>
+        </bpmn2:callActivity>
+        <bpmn2:callActivity id="CallActivity_6" name="MMMA_039">
+            <bpmn2:extensionElements>
+                <ifl:property>
+                    <key>bodyType</key>
+                    <value>constant</value>
+                </ifl:property>
+                <ifl:property>
+                    <key>propertyTable</key>
+                    <value/>
+                </ifl:property>
+                <ifl:property>
+                    <key>headerTable</key>
+                    <value/>
+                </ifl:property>
+                <ifl:property>
+                    <key>wrapContent</key>
+                    <value>인터페이스 ID				IIF-MMMA-039			IS 인터페이스 ID				MMMA_039_S_BCDA-SAP_HTTP-PROXY		
+인터페이스 상세 내역				BSS자재 시스템에서H&amp;S,DIY 지점 상품매출출고 취소대상 조회조건을 수신하여 취소대상을 송신한다.									
+인터페이스 유형				동기식(sync)			(*) IS적용패턴(IS 적용시만, 자동 채번됨)				REST2PROXY		
+
+시스템 명				BCDA			시스템 명				SAP		
+인터페이스 상세 유형				REST			인터페이스 상세 유형				PROXY		
+Program/Function/Procedure 명							Program/Function/Procedure 명				ZBAR_IF_BAR5500		
+
+
+
+Request(요청)▶▶													
+순번	Structure	Field	Key	Desc.	Type	Size	순번	Structure	Field	Key	Desc.	Type	Size
+1		ETDAT_F		요청일자 시작일 	string	8	1		IV_ETDAT_F		요청일자 시작일 	DATS	8
+2		ETDAT_T		요청일자 종료일 	string	8	2		IV_ETDAT_T		요청일자 종료일 	DATS	8
+3		CTNUM		계약번호	string	9	3		IV_CTNUM		계약번호	CHAR	9
+4		WERKS		플랜트 	string	4	4		IV_WERKS		플랜트 	CHAR	4
+5		LGORT		저장위치 	string	4	5		IV_LGORT		저장위치 	CHAR	4
+6							6						
+7							7						
+8							8						
+순번	Table	Field	Key	Desc.	Type	Size	순번	Table	Field	Key	Desc.	Type	Size
+1							1	N/A					
+2							2						
+3							3						
+4							4						
+5							5						
+6							6						
+7							7						
+8							8						
+9							9						
+10							10						
+11							11						
+12							12						
+13							13						
+14							14						
+15							15						
+16							16						
+17							17						
+18							18						
+19							19						
+20							20						
+21							21						
+22							22						
+23							23						
+24							24						
+25							25						
+26							26						
+27							27						
+◀◀Response(응답)													
+순번	Structure	Field	Key	Desc.	Type	Size	순번	Structure	Field	Key	Desc.	Type	Size
+1		ERRMESG		결과메세지	string	220	1		EV_ERRMESG		결과메세지	CHAR	220
+2		ERRCODE		처리결과 ( -1 : 에러 )	int	10	2		EV_ERRCODE		처리결과 ( -1 : 에러 )	INT4	10
+													
+													
+													
+													
+													
+순번	Table	Field	Key	Desc.	Type	Size	순번	Table	Field	Key	Desc.	Type	Size
+1	ET_RESULT	ETDAT		요청일자	string		1	"ET_RESULT
+( ZBARS5500 )"	ETDAT		요청일자	DATS	8
+2		RQNUM		변경요청번호 	string		2		RQNUM		변경요청번호 	CHAR	9
+3		DDTEXT		설명 내역	string		3		DDTEXT		설명 내역	CHAR	60
+4		CTNUM		계약번호	string		4		CTNUM		계약번호	CHAR	9
+5		MATNR		자재 번호	string		5		MATNR		자재 번호	CHAR	40
+6		MEINS		기본 단위	int		6		MEINS		기본 단위	UNIT	3
+7		ZLF		출고수량	double		7		ZLF		출고수량	QUAN	13,3
+8		MBLNR		자재 문서 번호	string		8		MBLNR		자재 문서 번호	CHAR	10
+9		MJAHR		자재 문서 연도	int		9		MJAHR		자재 문서 연도	NUMC	4
+10		ZEILE		자재 문서 항목	int		10		ZEILE		자재 문서 항목	NUMC	4
+
+
+
+
+-REQUSET
+{"ETDAT_F":"","ETDAT_T":"","CTNUM":"","WERKS":"","LGORT":""}
+-RESPONSE
+{"ERRMESG":"","ERRCODE":"","ET_RESULT":[{"ETDAT":"","RQNUM":"","DDTEXT":"","CTNUM":"","MATNR":"","MEINS":"","ZLF":"","MBLNR":"","MJAHR":"","ZEILE":""}]}</value>
+                </ifl:property>
+                <ifl:property>
+                    <key>componentVersion</key>
+                    <value>1.6</value>
+                </ifl:property>
+                <ifl:property>
+                    <key>activityType</key>
+                    <value>Enricher</value>
+                </ifl:property>
+                <ifl:property>
+                    <key>cmdVariantUri</key>
+                    <value>ctype::FlowstepVariant/cname::Enricher/version::1.6.0</value>
+                </ifl:property>
+            </bpmn2:extensionElements>
+            <bpmn2:incoming>SequenceFlow_5</bpmn2:incoming>
+            <bpmn2:outgoing>SequenceFlow_7</bpmn2:outgoing>
+        </bpmn2:callActivity>
+        <bpmn2:sequenceFlow id="SequenceFlow_3" sourceRef="StartEvent_2" targetRef="CallActivity_4"/>
+        <bpmn2:sequenceFlow id="SequenceFlow_5" sourceRef="CallActivity_4" targetRef="CallActivity_6"/>
+        <bpmn2:sequenceFlow id="SequenceFlow_7" sourceRef="CallActivity_6" targetRef="EndEvent_2"/>
+    </bpmn2:process>
+    <bpmndi:BPMNDiagram id="BPMNDiagram_1" name="Default Collaboration Diagram">
+        <bpmndi:BPMNPlane bpmnElement="Collaboration_1" id="BPMNPlane_1">
+            <bpmndi:BPMNShape bpmnElement="EndEvent_2" id="BPMNShape_EndEvent_2">
+                <dc:Bounds height="32.0" width="32.0" x="705.0" y="142.0"/>
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape bpmnElement="CallActivity_72" id="BPMNShape_CallActivity_72">
+                <dc:Bounds height="60.0" width="100.0" x="414.0" y="206.0"/>
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape bpmnElement="StartEvent_2" id="BPMNShape_StartEvent_2">
+                <dc:Bounds height="32.0" width="32.0" x="294.0" y="142.0"/>
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape bpmnElement="CallActivity_6" id="BPMNShape_CallActivity_6">
+                <dc:Bounds height="60.0" width="100.0" x="578.0" y="132.0"/>
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape bpmnElement="CallActivity_4" id="BPMNShape_CallActivity_4">
+                <dc:Bounds height="60.0" width="100.0" x="414.0" y="132.0"/>
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape bpmnElement="Participant_Process_1" id="BPMNShape_Participant_Process_1">
+                <dc:Bounds height="411.0" width="569.0" x="252.0" y="60.0"/>
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNEdge bpmnElement="SequenceFlow_5" id="BPMNEdge_SequenceFlow_5" sourceElement="BPMNShape_CallActivity_4" targetElement="BPMNShape_CallActivity_6">
+                <di:waypoint x="464.0" xsi:type="dc:Point" y="162.0"/>
+                <di:waypoint x="628.0" xsi:type="dc:Point" y="162.0"/>
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge bpmnElement="SequenceFlow_7" id="BPMNEdge_SequenceFlow_7" sourceElement="BPMNShape_CallActivity_6" targetElement="BPMNShape_EndEvent_2">
+                <di:waypoint x="628.0" xsi:type="dc:Point" y="160.0"/>
+                <di:waypoint x="721.0" xsi:type="dc:Point" y="160.0"/>
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge bpmnElement="SequenceFlow_3" id="BPMNEdge_SequenceFlow_3" sourceElement="BPMNShape_StartEvent_2" targetElement="BPMNShape_CallActivity_4">
+                <di:waypoint x="310.0" xsi:type="dc:Point" y="160.0"/>
+                <di:waypoint x="464.0" xsi:type="dc:Point" y="160.0"/>
+            </bpmndi:BPMNEdge>
+        </bpmndi:BPMNPlane>
+    </bpmndi:BPMNDiagram>
+</bpmn2:definitions>

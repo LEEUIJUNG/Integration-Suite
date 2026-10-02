@@ -1,0 +1,17 @@
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://example.com/A-DT" targetNamespace="http://example.com/A-DT">
+   <xsd:complexType name="A-DT_260602">
+      <xsd:sequence>
+         <xsd:element name="Element1" type="xsd:string" minOccurs="0" />
+         <xsd:element name="Element3" minOccurs="0" maxOccurs="unbounded">
+            <xsd:complexType>
+               <xsd:sequence>
+                  <xsd:element name="Element1" type="xsd:string" minOccurs="0" maxOccurs="unbounded" />
+                  <xsd:element name="Element2" type="xsd:string" minOccurs="0" maxOccurs="unbounded" />
+                  <xsd:element name="Element3" type="xsd:string" minOccurs="0" maxOccurs="unbounded" />
+               </xsd:sequence>
+            </xsd:complexType>
+         </xsd:element>
+      </xsd:sequence>
+   </xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,6 @@
+#Fri Apr 10 07:19:09 UTC 2026
+Status=ALL
+LogStart=2024-11-26T09\:00\:00
+LogEnd=2024-11-27T09\:00\:00
+SYSTEM_ADDR=https\://cncity-is-dev.cpi015.cfapps.ap12.hana.ondemand.com
+systemCredential=TEST_Business_Hub_API_Credential

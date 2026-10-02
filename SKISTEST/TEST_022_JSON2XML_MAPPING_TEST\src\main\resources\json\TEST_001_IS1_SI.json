@@ -1,0 +1,147 @@
+{
+    "openapi": "3.0.3",
+    "info": {
+        "title": "TEST_001_IS1_SI",
+        "version": "1.0.0"
+    },
+    "components": {
+        "schemas": {
+            "TEST_001_IS1": {
+                "type": "object",
+                "properties": {
+                    "typeStringExample": {
+                        "type": "string"
+                    },
+                    "typeNumberExample1": {
+                        "type": "number"
+                    },"typeNumberExample2": {
+                        "type": "number"
+                    },"typeNumberExample3": {
+                        "type": "number"
+                    },
+                    "typeIntegerExample1": {
+                        "type": "integer"
+                    },"typeIntegerExample2": {
+                        "type": "integer"
+                    },
+                    "typeBooleanExample": {
+                        "type": "boolean"
+                    },
+                    "typeStructureExample": {
+                        "type": "object",
+                        "properties": {
+                            "StructureField1": {
+                                "type": "string"
+                            },
+                            "StructureField2": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "typeTableExample": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "TableField1": {
+                                    "type": "string"
+                                },
+                                "TableField2": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    "emptyTableExample": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "TableField1": {
+                                    "type": "string"
+                                },
+                                "TableField2": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "TEST_001_OS2": {
+                "type": "object",
+                "properties": {
+                    "Field1": {
+                        "type": "string"
+                    },
+                    "Field2": {
+                        "type": "string"
+                    },
+                    "Structure1": {
+                        "type": "object",
+                        "properties": {
+                            "StructureField1": {
+                                "type": "string"
+                            },
+                            "StructureField2": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    "Table1": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "TableField1": {
+                                    "type": "string"
+                                },
+                                "TableField2": {
+                                    "type": "string"
+                                },
+                                "TableField3": {
+                                    "type": "string"
+                                },
+                                "TableField4": {
+                                    "type": "string"
+                                },
+                                "TableField5": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "paths": {
+        "/": {
+            "post": {
+                "requestBody": {
+                    "required": true,
+                    "description": "",
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/TEST_001_IS1"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "default": {
+                        "description": "",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/TEST_001_OS2"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

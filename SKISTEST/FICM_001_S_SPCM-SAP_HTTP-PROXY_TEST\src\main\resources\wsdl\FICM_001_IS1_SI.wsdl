@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="FICM_001_IS1_SI" targetNamespace="urn:sap-com:sprx:ep:cust:FICM_001"
+	xmlns:p1="urn:sap-com:sprx:ep:cust:FICM_001"
+	xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+	xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+	<wsdl:documentation />
+	<wsp:UsingPolicy wsdl:required="true" />
+	<wsp:Policy wsu:Id="OP_FICM_001_IS1_SI" />
+	<wsdl:types>
+		<xsd:schema targetNamespace="urn:sap-com:sprx:ep:cust:FICM_001"
+			xmlns="urn:sap-com:sprx:ep:cust:FICM_001"
+			xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:element name="FICM_001_IS1_MT" type="FICM_001_IS1_DT" />
+			<xsd:complexType name="FICM_001_IS1_DT">
+				<xsd:sequence>
+					<xsd:element name="I_TELNO" type="xsd:string" minOccurs="0" />
+					<xsd:element name="I_CALLBACK" type="xsd:string" minOccurs="0" />
+					<xsd:element name="I_MSG" type="xsd:string" minOccurs="0" />
+					<xsd:element name="I_LMS_TITLE" type="xsd:string" minOccurs="0" />
+					<xsd:element name="I_TRTYP" type="xsd:string" minOccurs="0" />
+					<xsd:element name="I_CTNUM" type="xsd:string" minOccurs="0" />
+					<xsd:element name="I_CALLPGM" type="xsd:string" minOccurs="0" />
+					<xsd:element name="I_DEPTCD" type="xsd:string" minOccurs="0" />
+					<xsd:element name="I_EMPNO" type="xsd:string" minOccurs="0" />
+					<xsd:element name="I_MIN" type="xsd:string" minOccurs="0" />
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="FICM_001_IS2_MT" type="FICM_001_IS2_DT" />
+			<xsd:complexType name="FICM_001_IS2_DT">
+				<xsd:sequence>
+					<xsd:element name="E_MSGTYP" type="xsd:string" minOccurs="0" />
+					<xsd:element name="E_MESSAGE" type="xsd:string" minOccurs="0" />
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="FICM_001_IS1_MT">
+		<wsdl:documentation />
+		<wsdl:part name="FICM_001_IS1_MT" element="p1:FICM_001_IS1_MT" />
+	</wsdl:message>
+	<wsdl:message name="FICM_001_IS2_MT">
+		<wsdl:documentation />
+		<wsdl:part name="FICM_001_IS2_MT" element="p1:FICM_001_IS2_MT" />
+	</wsdl:message>
+	<wsdl:portType name="FICM_001_IS1_SI">
+		<wsdl:documentation />
+		<wsdl:operation name="FICM_001_IS1_SI">
+			<wsdl:documentation />
+			<wsp:Policy>
+				<wsp:PolicyReference URI="#OP_FICM_001_IS1_SI" />
+			</wsp:Policy>
+			<wsdl:input message="p1:FICM_001_IS1_MT" />
+			<wsdl:output message="p1:FICM_001_IS2_MT" />
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="FICM_001_IS1_SIBinding" type="p1:FICM_001_IS1_SI">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"
+			xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+		<wsdl:operation name="FICM_001_IS1_SI">
+			<soap:operation soapAction="http://sap.com/xi/WebService/soap1.1"
+				xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+			<wsdl:input>
+				<soap:body use="literal"
+					xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"
+					xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+</wsdl:definitions>

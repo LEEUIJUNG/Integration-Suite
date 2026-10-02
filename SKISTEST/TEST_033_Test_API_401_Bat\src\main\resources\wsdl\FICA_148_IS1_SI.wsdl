@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="FICA_148_IS1_SI"
+	xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+	xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+	<wsdl:documentation/>
+	<wsp:UsingPolicy wsdl:required="true"/>
+	<wsp:Policy wsu:Id="OP_FICA_148_IS1_SI"/>
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:element name="FICA_148_IS1_MT" type="FICA_148_IS1_DT"/>
+			<xsd:complexType name="FICA_148_IS1_DT">
+				<xsd:sequence>
+					<xsd:element name="comCd" type="xsd:string" minOccurs="0"/>
+					<xsd:element name="stdDt" type="xsd:string" minOccurs="0"/>
+					<xsd:element name="ZSD_LSUM_BOND_MGMT" minOccurs="0" maxOccurs="unbounded">
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="itgrtInvCntrtNo" type="xsd:string" minOccurs="0"/>
+								<xsd:element name="invYm" type="xsd:string" minOccurs="0"/>
+								<xsd:element name="acctChitno" type="xsd:string" minOccurs="0"/>
+								<xsd:element name="acctYr" type="xsd:string" minOccurs="0"/>
+								<xsd:element name="salesClCd" type="xsd:string" minOccurs="0"/>
+								<xsd:element name="invDt" type="xsd:string" minOccurs="0"/>
+								<xsd:element name="itgrtInvCntrtThingNm" type="xsd:string" minOccurs="0"/>
+								<xsd:element name="invPrdltCd" type="xsd:string" minOccurs="0"/>
+								<xsd:element name="invPrdltCdNm" type="xsd:string" minOccurs="0"/>
+								<xsd:element name="hqCd" type="xsd:string" minOccurs="0"/>
+								<xsd:element name="invDeptCd" type="xsd:string" minOccurs="0"/>
+								<xsd:element name="invChrgrEmpno" type="xsd:string" minOccurs="0"/>
+								<xsd:element name="cntrtno" type="xsd:string" minOccurs="0"/>
+								<xsd:element name="cntrtThingNm" type="xsd:string" minOccurs="0"/>
+								<xsd:element name="custno" type="xsd:string" minOccurs="0"/>
+								<xsd:element name="custNm" type="xsd:string" minOccurs="0"/>
+								<xsd:element name="clsgDt" type="xsd:string" minOccurs="0"/>
+								<xsd:element name="invAmt" type="xsd:string" minOccurs="0"/>
+								<xsd:element name="clcmnAmt" type="xsd:string" minOccurs="0"/>
+								<xsd:element name="uncltAmt" type="xsd:string" minOccurs="0"/>
+								<xsd:element name="psovrYn" type="xsd:string" minOccurs="0"/>
+								<xsd:element name="rtrvlDelayAccumCnt" type="xsd:string" minOccurs="0"/>
+								<xsd:element name="rtrvlSchdlDt" type="xsd:string" minOccurs="0"/>
+								<xsd:element name="pchkYn" type="xsd:string" minOccurs="0"/>
+								<xsd:element name="delayResonCtt" type="xsd:string" minOccurs="0"/>
+								<xsd:element name="delayResonCd" type="xsd:string" minOccurs="0"/>
+								<xsd:element name="wbsId" type="xsd:string" minOccurs="0"/>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			<xsd:element name="FICA_148_IS2_MT" type="FICA_148_IS2_DT"/>
+			<xsd:complexType name="FICA_148_IS2_DT">
+				<xsd:sequence>
+					<xsd:element name="msgTypeCd" type="xsd:string" minOccurs="0"/>
+					<xsd:element name="msgCtt" type="xsd:string" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="FICA_148_IS1_MT">
+		<wsdl:documentation/>
+		<wsdl:part name="FICA_148_IS1_MT" element="FICA_148_IS1_MT"/>
+	</wsdl:message>
+	<wsdl:message name="FICA_148_IS2_MT">
+		<wsdl:documentation/>
+		<wsdl:part name="FICA_148_IS2_MT" element="FICA_148_IS2_MT"/>
+	</wsdl:message>
+	<wsdl:portType name="FICA_148_IS1_SI">
+		<wsdl:documentation/>
+		<wsdl:operation name="FICA_148_IS1_SI">
+			<wsdl:documentation/>
+			<wsp:Policy>
+				<wsp:PolicyReference URI="#OP_FICA_148_IS1_SI"/>
+			</wsp:Policy>
+			<wsdl:input message="FICA_148_IS1_MT"/>
+			<wsdl:output message="FICA_148_IS2_MT"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="FICA_148_IS1_SIBinding" type="FICA_148_IS1_SI">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"
+			xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+		<wsdl:operation name="FICA_148_IS1_SI">
+			<soap:operation soapAction="http://sap.com/xi/WebService/soap1.1"
+				xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+			<wsdl:input>
+				<soap:body use="literal"
+					xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"
+					xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+</wsdl:definitions>

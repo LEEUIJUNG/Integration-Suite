@@ -1,0 +1,6 @@
+#Wed Jul 30 05:46:34 UTC 2025
+Status=ALL
+systemAddr=https\://sapbtp-qas-zpux6n0q.it-cpi015.cfapps.ap12.hana.ondemand.com
+LogStart=2025-07-28T09\:00\:00
+LogEnd=2025-07-28T18\:00\:00
+systemCredential=TEST_Business_Hub_API_Credential

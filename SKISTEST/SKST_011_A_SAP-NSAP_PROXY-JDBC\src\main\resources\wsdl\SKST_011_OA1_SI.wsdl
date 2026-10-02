@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="SKST_011_OA1_SI" targetNamespace="http://skshieldus.com/Async"
+    xmlns:p1="http://skshieldus.com/Async"
+    xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+    xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+    <wsdl:documentation/>
+    <wsp:UsingPolicy wsdl:required="true"/>
+    <wsp:Policy wsu:Id="OP_SKST_011_OA1_SI"/>
+    <wsdl:types>
+        <xsd:schema targetNamespace="http://skshieldus.com/Async"
+            xmlns="http://skshieldus.com/Async"
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:element name="SKST_011_OA1_MT" type="SKST_011_OA1_DT"/>
+            <xsd:complexType name="SKST_011_OA1_DT">
+                <xsd:sequence>
+                    <xsd:element name="row" maxOccurs="unbounded">
+                        <xsd:complexType>
+                            <xsd:sequence>
+                                <xsd:element name="BUKRS">
+                                    <xsd:annotation>
+                                        <xsd:documentation>회사 코드</xsd:documentation>
+                                    </xsd:annotation>
+                                    <xsd:simpleType>
+                                        <xsd:restriction base="xsd:string">
+                                            <xsd:maxLength value="4"/>
+                                        </xsd:restriction>
+                                    </xsd:simpleType>
+                                </xsd:element>
+                                <xsd:element name="JAJAE">
+                                    <xsd:annotation>
+                                        <xsd:documentation>자재코드</xsd:documentation>
+                                    </xsd:annotation>
+                                    <xsd:simpleType>
+                                        <xsd:restriction base="xsd:string">
+                                            <xsd:maxLength value="6"/>
+                                        </xsd:restriction>
+                                    </xsd:simpleType>
+                                </xsd:element>
+                                <xsd:element name="GUCD">
+                                    <xsd:annotation>
+                                        <xsd:documentation>자재코드구분</xsd:documentation>
+                                    </xsd:annotation>
+                                    <xsd:simpleType>
+                                        <xsd:restriction base="xsd:string">
+                                            <xsd:maxLength value="1"/>
+                                        </xsd:restriction>
+                                    </xsd:simpleType>
+                                </xsd:element>
+                                <xsd:element name="PCOD">
+                                    <xsd:annotation>
+                                        <xsd:documentation>자재코드품명</xsd:documentation>
+                                    </xsd:annotation>
+                                    <xsd:simpleType>
+                                        <xsd:restriction base="xsd:string">
+                                            <xsd:maxLength value="2"/>
+                                        </xsd:restriction>
+                                    </xsd:simpleType>
+                                </xsd:element>
+                                <xsd:element name="MCOD">
+                                    <xsd:annotation>
+                                        <xsd:documentation>자재코드규격</xsd:documentation>
+                                    </xsd:annotation>
+                                    <xsd:simpleType>
+                                        <xsd:restriction base="xsd:string">
+                                            <xsd:maxLength value="3"/>
+                                        </xsd:restriction>
+                                    </xsd:simpleType>
+                                </xsd:element>
+                                <xsd:element name="MATNR" minOccurs="0">
+                                    <xsd:annotation>
+                                        <xsd:documentation>자재 번호</xsd:documentation>
+                                    </xsd:annotation>
+                                    <xsd:simpleType>
+                                        <xsd:restriction base="xsd:string">
+                                            <xsd:maxLength value="18"/>
+                                        </xsd:restriction>
+                                    </xsd:simpleType>
+                                </xsd:element>
+                                <xsd:element name="BWCD1" minOccurs="0">
+                                    <xsd:annotation>
+                                        <xsd:documentation>부위코드구분</xsd:documentation>
+                                    </xsd:annotation>
+                                    <xsd:simpleType>
+                                        <xsd:restriction base="xsd:string">
+                                            <xsd:maxLength value="2"/>
+                                        </xsd:restriction>
+                                    </xsd:simpleType>
+                                </xsd:element>
+                                <xsd:element name="BWCD" minOccurs="0">
+                                    <xsd:annotation>
+                                        <xsd:documentation>부위코드</xsd:documentation>
+                                    </xsd:annotation>
+                                    <xsd:simpleType>
+                                        <xsd:restriction base="xsd:string">
+                                            <xsd:maxLength value="5"/>
+                                        </xsd:restriction>
+                                    </xsd:simpleType>
+                                </xsd:element>
+                                <xsd:element name="PNM" minOccurs="0">
+                                    <xsd:annotation>
+                                        <xsd:documentation>품명</xsd:documentation>
+                                    </xsd:annotation>
+                                    <xsd:simpleType>
+                                        <xsd:restriction base="xsd:string">
+                                            <xsd:maxLength value="50"/>
+                                        </xsd:restriction>
+                                    </xsd:simpleType>
+                                </xsd:element>
+                                <xsd:element name="GUK" minOccurs="0">
+                                    <xsd:annotation>
+                                        <xsd:documentation>규격</xsd:documentation>
+                                    </xsd:annotation>
+                                    <xsd:simpleType>
+                                        <xsd:restriction base="xsd:string">
+                                            <xsd:maxLength value="50"/>
+                                        </xsd:restriction>
+                                    </xsd:simpleType>
+                                </xsd:element>
+                                <xsd:element name="DAW" minOccurs="0">
+                                    <xsd:annotation>
+                                        <xsd:documentation>단위</xsd:documentation>
+                                    </xsd:annotation>
+                                    <xsd:simpleType>
+                                        <xsd:restriction base="xsd:string">
+                                            <xsd:maxLength value="10"/>
+                                        </xsd:restriction>
+                                    </xsd:simpleType>
+                                </xsd:element>
+                                <xsd:element name="SOURC1" minOccurs="0">
+                                    <xsd:annotation>
+                                        <xsd:documentation>계산대상1</xsd:documentation>
+                                    </xsd:annotation>
+                                    <xsd:simpleType>
+                                        <xsd:restriction base="xsd:string">
+                                            <xsd:maxLength value="1"/>
+                                        </xsd:restriction>
+                                    </xsd:simpleType>
+                                </xsd:element>
+                                <xsd:element name="TARGT1" minOccurs="0">
+                                    <xsd:annotation>
+                                        <xsd:documentation>계산결과1</xsd:documentation>
+                                    </xsd:annotation>
+                                    <xsd:simpleType>
+                                        <xsd:restriction base="xsd:string">
+                                            <xsd:maxLength value="1"/>
+                                        </xsd:restriction>
+                                    </xsd:simpleType>
+                                </xsd:element>
+                                <xsd:element name="RATIO1" minOccurs="0">
+                                    <xsd:annotation>
+                                        <xsd:documentation>계산비율1(%)</xsd:documentation>
+                                    </xsd:annotation>
+                                    <xsd:simpleType>
+                                        <xsd:restriction base="xsd:string">
+                                            <xsd:maxLength value="4"/>
+                                        </xsd:restriction>
+                                    </xsd:simpleType>
+                                </xsd:element>
+                                <xsd:element name="SOURC2" minOccurs="0">
+                                    <xsd:annotation>
+                                        <xsd:documentation>계산대상2</xsd:documentation>
+                                    </xsd:annotation>
+                                    <xsd:simpleType>
+                                        <xsd:restriction base="xsd:string">
+                                            <xsd:maxLength value="1"/>
+                                        </xsd:restriction>
+                                    </xsd:simpleType>
+                                </xsd:element>
+                                <xsd:element name="TARGT2" minOccurs="0">
+                                    <xsd:annotation>
+                                        <xsd:documentation>계산결과2</xsd:documentation>
+                                    </xsd:annotation>
+                                    <xsd:simpleType>
+                                        <xsd:restriction base="xsd:string">
+                                            <xsd:maxLength value="1"/>
+                                        </xsd:restriction>
+                                    </xsd:simpleType>
+                                </xsd:element>
+                                <xsd:element name="RATIO2" minOccurs="0">
+                                    <xsd:annotation>
+                                        <xsd:documentation>계산비율2(%)</xsd:documentation>
+                                    </xsd:annotation>
+                                    <xsd:simpleType>
+                                        <xsd:restriction base="xsd:string">
+                                            <xsd:maxLength value="4"/>
+                                        </xsd:restriction>
+                                    </xsd:simpleType>
+                                </xsd:element>
+                                <xsd:element name="SOURC3" minOccurs="0">
+                                    <xsd:annotation>
+                                        <xsd:documentation>계산대상3</xsd:documentation>
+                                    </xsd:annotation>
+                                    <xsd:simpleType>
+                                        <xsd:restriction base="xsd:string">
+                                            <xsd:maxLength value="1"/>
+                                        </xsd:restriction>
+                                    </xsd:simpleType>
+                                </xsd:element>
+                                <xsd:element name="TARGT3" minOccurs="0">
+                                    <xsd:annotation>
+                                        <xsd:documentation>계산결과3</xsd:documentation>
+                                    </xsd:annotation>
+                                    <xsd:simpleType>
+                                        <xsd:restriction base="xsd:string">
+                                            <xsd:maxLength value="1"/>
+                                        </xsd:restriction>
+                                    </xsd:simpleType>
+                                </xsd:element>
+                                <xsd:element name="RATIO3" minOccurs="0">
+                                    <xsd:annotation>
+                                        <xsd:documentation>계산비율3(%)</xsd:documentation>
+                                    </xsd:annotation>
+                                    <xsd:simpleType>
+                                        <xsd:restriction base="xsd:string">
+                                            <xsd:maxLength value="4"/>
+                                        </xsd:restriction>
+                                    </xsd:simpleType>
+                                </xsd:element>
+                                <xsd:element name="OFTEN" minOccurs="0">
+                                    <xsd:annotation>
+                                        <xsd:documentation>자주사용하는자재</xsd:documentation>
+                                    </xsd:annotation>
+                                    <xsd:simpleType>
+                                        <xsd:restriction base="xsd:string">
+                                            <xsd:maxLength value="1"/>
+                                        </xsd:restriction>
+                                    </xsd:simpleType>
+                                </xsd:element>
+                                <xsd:element name="DELFLG" minOccurs="0">
+                                    <xsd:annotation>
+                                        <xsd:documentation>지시자:엔트리 삭제</xsd:documentation>
+                                    </xsd:annotation>
+                                    <xsd:simpleType>
+                                        <xsd:restriction base="xsd:string">
+                                            <xsd:maxLength value="1"/>
+                                        </xsd:restriction>
+                                    </xsd:simpleType>
+                                </xsd:element>
+                                <xsd:element name="ERNAM" minOccurs="0">
+                                    <xsd:annotation>
+                                        <xsd:documentation>오브젝트 생성자 이름</xsd:documentation>
+                                    </xsd:annotation>
+                                    <xsd:simpleType>
+                                        <xsd:restriction base="xsd:string">
+                                            <xsd:maxLength value="12"/>
+                                        </xsd:restriction>
+                                    </xsd:simpleType>
+                                </xsd:element>
+                                <xsd:element name="EMPCR" minOccurs="0">
+                                    <xsd:annotation>
+                                        <xsd:documentation>사원번호</xsd:documentation>
+                                    </xsd:annotation>
+                                    <xsd:simpleType>
+                                        <xsd:restriction base="xsd:string">
+                                            <xsd:maxLength value="12"/>
+                                        </xsd:restriction>
+                                    </xsd:simpleType>
+                                </xsd:element>
+                                <xsd:element name="ERDAT" minOccurs="0">
+                                    <xsd:annotation>
+                                        <xsd:documentation>레코드 생성일</xsd:documentation>
+                                    </xsd:annotation>
+                                    <xsd:simpleType>
+                                        <xsd:restriction base="xsd:string">
+                                            <xsd:maxLength value="8"/>
+                                        </xsd:restriction>
+                                    </xsd:simpleType>
+                                </xsd:element>
+                                <xsd:element name="AENAM" minOccurs="0">
+                                    <xsd:annotation>
+                                        <xsd:documentation>오브젝트 변경자 이름</xsd:documentation>
+                                    </xsd:annotation>
+                                    <xsd:simpleType>
+                                        <xsd:restriction base="xsd:string">
+                                            <xsd:maxLength value="12"/>
+                                        </xsd:restriction>
+                                    </xsd:simpleType>
+                                </xsd:element>
+                                <xsd:element name="EMPMD" minOccurs="0">
+                                    <xsd:annotation>
+                                        <xsd:documentation>사원번호</xsd:documentation>
+                                    </xsd:annotation>
+                                    <xsd:simpleType>
+                                        <xsd:restriction base="xsd:string">
+                                            <xsd:maxLength value="12"/>
+                                        </xsd:restriction>
+                                    </xsd:simpleType>
+                                </xsd:element>
+                                <xsd:element name="AEDAT" minOccurs="0">
+                                    <xsd:annotation>
+                                        <xsd:documentation>변경일</xsd:documentation>
+                                    </xsd:annotation>
+                                    <xsd:simpleType>
+                                        <xsd:restriction base="xsd:string">
+                                            <xsd:maxLength value="8"/>
+                                        </xsd:restriction>
+                                    </xsd:simpleType>
+                                </xsd:element>
+                                <xsd:element name="DANGA" minOccurs="0">
+                                    <xsd:annotation>
+                                        <xsd:documentation>자재단가</xsd:documentation>
+                                    </xsd:annotation>
+                                    <xsd:simpleType>
+                                        <xsd:restriction base="xsd:string">
+                                            <xsd:maxLength value="15"/>
+                                        </xsd:restriction>
+                                    </xsd:simpleType>
+                                </xsd:element>
+                                <xsd:element name="SJAJAE" type="xsd:string" minOccurs="0"/>
+                                <xsd:element name="IYMD" type="xsd:string" minOccurs="0"/>
+                                <xsd:element name="ZYMD" type="xsd:string" minOccurs="0"/>
+                                <xsd:element name="RATIO" type="xsd:string" minOccurs="0"/>
+                            </xsd:sequence>
+                        </xsd:complexType>
+                    </xsd:element>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:schema>
+    </wsdl:types>
+    <wsdl:message name="SKST_011_OA1_MT">
+        <wsdl:documentation/>
+        <wsdl:part name="SKST_011_OA1_MT" element="p1:SKST_011_OA1_MT"/>
+    </wsdl:message>
+    <wsdl:portType name="SKST_011_OA1_SI">
+        <wsdl:documentation/>
+        <wsdl:operation name="SKST_011_OA1_SI">
+            <wsdl:documentation/>
+            <wsp:Policy>
+                <wsp:PolicyReference URI="#OP_SKST_011_OA1_SI"/>
+            </wsp:Policy>
+            <wsdl:input message="p1:SKST_011_OA1_MT"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="SKST_011_OA1_SIBinding" type="p1:SKST_011_OA1_SI">
+        <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"
+            xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+        <wsdl:operation name="SKST_011_OA1_SI">
+            <wsdlsoap:operation soapAction="http://sap.com/xi/WebService/soap1.1"
+                xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+            <wsdl:input>
+                <wsdlsoap:body use="literal"
+                    xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+            </wsdl:input>
+        </wsdl:operation>
+    </wsdl:binding>
+</wsdl:definitions>

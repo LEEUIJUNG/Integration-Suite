@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: A-DT_260602
+Bundle-SymbolicName: A-DT_260602
+Bundle-Version: 1.0.1
+SAP-BundleType: DataType
+SAP-NodeType: IFLMAP
+Import-Package: 
+Provide-Capability: datatype.A-DT_260602;version:Version="1.0.1"
+

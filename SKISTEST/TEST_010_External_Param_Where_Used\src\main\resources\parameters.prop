@@ -1,0 +1,4 @@
+#Tue Jan 06 02:11:41 UTC 2026
+CredentialName=TEST_Business_Hub_API_Credential
+systemAddr=https\://sa-dev-tmjypo45.it-cpi015.cfapps.ap12.hana.ondemand.com
+systemCredential=TEST_Business_Hub_API_Credential

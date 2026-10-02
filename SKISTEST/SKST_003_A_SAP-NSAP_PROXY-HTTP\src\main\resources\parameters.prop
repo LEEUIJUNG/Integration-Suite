@@ -1,0 +1,7 @@
+#Wed May 28 05:04:22 UTC 2025
+Authorization=
+RECV_TIMEOUT=300000
+LOCATION_ID=
+RECV_HOST=https\://sa-dev-tmjypo45.it-cpi015-rt.cfapps.ap12.hana.ondemand.com/http/SKST_004
+Content-Type=application/json; charset\=utf-8
+RECV_HTTP_HEADERS=Content-Type|Accept

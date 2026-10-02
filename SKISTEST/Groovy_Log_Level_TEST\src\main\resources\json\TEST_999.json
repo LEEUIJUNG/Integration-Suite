@@ -1,0 +1,303 @@
+{
+	"openapi": "3.0.3",
+	"info": {
+		"title": "Premise Details",
+		"version": "1.0.0",
+		"description": "Premise Details \n\nUse this API to view the premise details details based on customer external Id"
+	},
+	"servers": [
+		{
+			"url": "https://{hostname}",
+			"description": "Example of server url is https://my1234567.crm.cloud.sap",
+			"variables": {
+				"hostname": {
+					"default": ""
+				}
+			}
+		}
+	],
+	"components": {
+		"securitySchemes": {
+			"basicAuthentication": {
+				"type": "http",
+				"scheme": "basic"
+			}
+		},
+		"schemas": {
+			"error": {
+				"type": "object",
+				"properties": {
+					"error": {
+						"type": "object",
+						"properties": {
+							"intCode": {
+								"type": "int32"
+							},
+							"details": {
+								"type": "array",
+								"items": {
+									"type": "object",
+									"properties": {
+										"message": {
+											"type": "string"
+										},
+										"stringCode": {
+											"type": "string"
+										},
+										"target": {
+											"type": "string"
+										}
+									}
+								}
+							},
+							"message": {
+								"type": "string"
+							},
+							"target": {
+								"type": "string"
+							}
+						}
+					}
+				}
+			},
+			"PremiseDetailsqueryresponse": {
+				"title": "Premise Details query response",
+				"type": "object",
+				"properties": {
+					"count": {
+						"type": "integer",
+						"format": "int32"
+					},
+					"value": {
+						"type": "array",
+						"items": {
+							"type": "object",
+							"properties": {
+								"businessPartnerId": {
+									"type": "string",
+									"nullable": true,
+									"maxLength": 10,
+									"title": "Business Partner ID"
+								},
+								"language": {
+									"type": "string",
+									"nullable": true,
+									"maxLength": 2,
+									"title": "Language"
+								},
+								"premise": {
+									"type": "string",
+									"nullable": true,
+									"maxLength": 10,
+									"title": "Premise"
+								},
+								"premiseType": {
+									"type": "string",
+									"nullable": true,
+									"maxLength": 8,
+									"title": "Premise Type"
+								},
+								"premiseTypeText": {
+									"type": "string",
+									"nullable": true,
+									"maxLength": 40,
+									"title": "Premise Type Text"
+								},
+								"addressLine": {
+									"type": "string",
+									"nullable": true,
+									"maxLength": 80,
+									"title": "Address Line"
+								},
+								"serviceDetails": {
+									"type": "array",
+									"items": {
+										"type": "object",
+										"properties": {
+											"division": {
+												"type": "string",
+												"nullable": true,
+												"maxLength": 2,
+												"title": "Division"
+											},
+											"divisionText": {
+												"type": "string",
+												"nullable": true,
+												"maxLength": 20,
+												"title": "Division Text"
+											},
+											"divisionCategory": {
+												"type": "string",
+												"nullable": true,
+												"maxLength": 2,
+												"title": "Division Category"
+											},
+											"installation": {
+												"type": "string",
+												"nullable": true,
+												"maxLength": 10,
+												"title": "Installation"
+											},
+											"devices": {
+												"type": "array",
+												"items": {
+													"type": "object",
+													"properties": {
+														"device": {
+															"type": "string",
+															"nullable": true,
+															"maxLength": 18,
+															"title": "Device"
+														},
+														"deviceStartDate": {
+															"type": "string",
+															"nullable": true,
+															"maxLength": 10,
+															"title": "Device Start Date"
+														},
+														"deviceEndDate": {
+															"type": "string",
+															"nullable": true,
+															"maxLength": 10,
+															"title": "Device End Date"
+														}
+													}
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			},
+			"info": {
+				"type": "object",
+				"properties": {
+					"info": {
+						"type": "object",
+						"properties": {
+							"code": {
+								"type": "string"
+							},
+							"details": {
+								"type": "array",
+								"items": {
+									"type": "object",
+									"properties": {
+										"message": {
+											"type": "string"
+										},
+										"target": {
+											"type": "string"
+										},
+										"code": {
+											"type": "string"
+										},
+										"severity": {
+											"type": "string",
+											"enum": [
+												"ERROR",
+												"WARNING",
+												"INFO"
+											]
+										}
+									}
+								}
+							},
+							"message": {
+								"type": "string"
+							},
+							"target": {
+								"type": "string"
+							},
+							"severity": {
+								"type": "string",
+								"enum": [
+									"ERROR",
+									"WARNING",
+									"INFO"
+								]
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"security": [
+		{
+			"basicAuthentication": []
+		}
+	],
+	"paths": {
+		"/sap/c4c/api/v1/utilities-common-integration-service/premiseDetails": {
+			"get": {
+				"operationId": "querycommonintegrationservice_premiseDetails",
+				"tags": [
+					"PremiseDetails"
+				],
+				"summary": "Retrieve premise details information from the system.",
+				"description": "Specify query parameters to return desired premise details records from the system.",
+				"parameters": [
+					{
+						"name": "$filter",
+						"in": "query",
+						"required": true,
+						"schema": {
+							"type": "string"
+						},
+						"examples": {
+							"one": {
+								"value": "businessPartnerId eq 7000004172",
+								"summary": "Get premise details"
+							}
+						},
+						"description": "Filter premise details by customer."
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Retrieved premise details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"allOf": [
+										{
+											"$ref": "#/components/schemas/PremiseDetailsqueryresponse"
+										},
+										{
+											"$ref": "#/components/schemas/info"
+										}
+									]
+								}
+							}
+						}
+					},
+					"401": {
+						"description": "Unauthorized.\n\nThis error is caused when the request has not been applied because there are no valid authentication credentials for the target resource."
+					},
+					"403": {
+						"description": "Forbidden.\n\nThis client error code indicates that the server understood the request but refuses to authorize it."
+					},
+					"500": {
+						"description": "Internal Server Error.\n\nFailed to query premise details.",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/error"
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	"x-sap-shortText": "Manage entities from Premise Details service.",
+	"x-sap-extensible": {
+		"supported": "automatic",
+		"description": "You can create extension fields in the Premise Details API by following the steps mentioned in https://help.sap.com/docs/CX_NG_SVC/2c87cece32844c91836e535aef8f9642/d3bdfac0c6b141c0bac27408c3ed159f.html?locale=en-US. The newly created extensions will be available in the API request and response body."
+	}
+}

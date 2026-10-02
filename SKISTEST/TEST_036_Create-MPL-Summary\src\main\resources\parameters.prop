@@ -1,0 +1,5 @@
+#Wed Oct 29 04:36:47 UTC 2025
+systemAddr=https\://sa-prd-mf2e7o9k.it-cpi015.cfapps.ap12.hana.ondemand.com
+LogStart=2025-10-03T09\:00\:00
+LogEnd=2025-10-03T18\:00\:00
+systemCredential=TEST_Business_Hub_API_Credential

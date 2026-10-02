@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="SKST_008_IA1_SI" targetNamespace="urn:sap-com:sprx:ep:cust:SKST_008" xmlns:p1="urn:sap-com:sprx:ep:cust:SKST_008" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+	<wsdl:documentation/>
+	<wsp:UsingPolicy wsdl:required="true"/>
+	<wsp:Policy wsu:Id="OP_SKST_008_IA1_SI"/>
+	<wsdl:types>
+		<xsd:schema targetNamespace="urn:sap-com:sprx:ep:cust:SKST_008" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="urn:sap-com:sprx:ep:cust:SKST_008">
+			<xsd:element name="SKST_008_IA1_MT" type="SKST_008_IA1_DT"/>
+			<xsd:complexType name="SKST_008_IA1_DT">
+				<xsd:sequence>
+					<xsd:element name="IV_CARRID" type="xsd:string" minOccurs="0"/>
+				</xsd:sequence>
+			</xsd:complexType>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="SKST_008_IA1_MT">
+		<wsdl:documentation/>
+		<wsdl:part name="SKST_008_IA1_MT" element="p1:SKST_008_IA1_MT"/>
+	</wsdl:message>
+	<wsdl:portType name="SKST_008_IA1_SI">
+		<wsdl:documentation/>
+		<wsdl:operation name="SKST_008_IA1_SI">
+			<wsdl:documentation/>
+			<wsp:Policy>
+				<wsp:PolicyReference URI="#OP_SKST_008_IA1_SI"/>
+			</wsp:Policy>
+			<wsdl:input message="p1:SKST_008_IA1_MT"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="SKST_008_IA1_SIBinding" type="p1:SKST_008_IA1_SI">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+		<wsdl:operation name="SKST_008_IA1_SI">
+			<soap:operation soapAction="http://sap.com/xi/WebService/soap1.1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+			<wsdl:input>
+				<soap:body use="literal" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+			</wsdl:input>
+		</wsdl:operation>
+	</wsdl:binding>
+</wsdl:definitions>

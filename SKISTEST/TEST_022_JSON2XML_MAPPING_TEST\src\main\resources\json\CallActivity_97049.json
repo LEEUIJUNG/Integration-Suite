@@ -1,0 +1,43 @@
+{
+"openapi": "3.0.1",
+"info": {
+"title": "TEST_003",
+"description": "TEST_003_OS1_SI",
+"version": "1.0.0"
+},
+"servers": [
+{
+"url": "https://sa-dev-tmjypo45.it-cpi015-rt.cfapps.ap12.hana.ondemand.com/http/ma/rfc/TEST_001/RFCNAME"
+}
+],
+"paths": {
+"/": {
+"post": {
+"requestBody": {
+"required": true,
+"description": "",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/TEST_003_OS1"
+}
+}
+}
+},
+"responses": {
+"default": {
+"description": "",
+"content": {
+"application/json": {
+"schema": {
+"$ref": "#/components/schemas/TEST_003_OS2"
+}
+}
+}
+}
+}
+}
+}
+},
+"components":{"schemas":{"TEST_003_OS1":{"type":"object","properties":{"a1":{"type":"string"},"b1":{"type":"string"},"c1":{"type":"string"},"d1":{"type":"object","properties":{"e1":{"type":"string"},"f1":{"type":"string"},"g1":{"type":"string"}}},"h1":{"type":"object","properties":{"i1":{"type":"string"},"j1":{"type":"string"},"k1":{"type":"string"}}},"l1":{"type":"array","items":{"type":"object","properties":{"m1":{"type":"string"},"n1":{"type":"string"},"o1":{"type":"string"}}}},"p1":{"type":"array","items":{"type":"object","properties":{"q1":{"type":"string"},"r1":{"type":"string"},"s1":{"type":"string"}}}}}},"TEST_003_OS2":{"type":"object","properties":{"a2":{"type":"string"},"b2":{"type":"string"},"c2":{"type":"string"},"d2":{"type":"object","properties":{"e2":{"type":"string"},"f2":{"type":"string"},"g2":{"type":"string"}}},"h2":{"type":"object","properties":{"i2":{"type":"string"},"j2":{"type":"string"},"k2":{"type":"string"}}},"l2":{"type":"array","items":{"type":"object","properties":{"m2":{"type":"string"},"n2":{"type":"string"},"o2":{"type":"string"}}}},"p2":{"type":"array","items":{"type":"object","properties":{"q2":{"type":"string"},"r2":{"type":"string"},"s2":{"type":"string"}}}}}}}}
+}

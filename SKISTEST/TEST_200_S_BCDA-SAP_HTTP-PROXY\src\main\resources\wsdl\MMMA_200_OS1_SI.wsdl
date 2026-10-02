@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="MMMA_200_OS1_SI"
+	xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+	xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+	<wsdl:documentation/>
+	<wsp:UsingPolicy wsdl:required="true"/>
+	<wsp:Policy wsu:Id="OP_MMMA_200_OS1_SI"/>
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:element name="MMMA_200_OS1_MT" type="MMMA_200_OS1_DT"/>
+<xsd:complexType name="MMMA_200_OS1_DT">
+	<xsd:sequence>
+		<xsd:element name="WERKS" type="xsd:string" minOccurs="0"/><xsd:element name="LGORT" type="xsd:string" minOccurs="0"/><xsd:element name="LGORT_REQ" type="xsd:string" minOccurs="0"/><xsd:element name="ZM04IRG" type="xsd:string" minOccurs="0"/><xsd:element name="ETDAT_FROM" type="xsd:string" minOccurs="0"/><xsd:element name="ETDAT_TO" type="xsd:string" minOccurs="0"/><xsd:element name="CSTAT" type="xsd:string" minOccurs="0"/><xsd:element name="GIFRG" type="xsd:string" minOccurs="0"/><xsd:element name="CTNUM" type="xsd:string" minOccurs="0"/><xsd:element name="RQNUM" type="xsd:string" minOccurs="0"/>
+	</xsd:sequence>
+</xsd:complexType><xsd:element name="MMMA_200_OS2_MT" type="MMMA_200_OS2_DT"/>
+<xsd:complexType name="MMMA_200_OS2_DT">
+	<xsd:sequence>
+		<xsd:element name="ERRMESG" type="xsd:string" minOccurs="0"/><xsd:element name="ERRCODE" type="xsd:string" minOccurs="0"/><xsd:element name="ET_GI_REQ" minOccurs="0" maxOccurs="unbounded">
+	<xsd:complexType>
+		<xsd:sequence>
+<xsd:element name="ETDAT" type="xsd:string" minOccurs="0"/><xsd:element name="RQNUM" type="xsd:string" minOccurs="0"/><xsd:element name="DDTEXT" type="xsd:string" minOccurs="0"/><xsd:element name="PER" type="xsd:string" minOccurs="0"/><xsd:element name="CTNUM" type="xsd:string" minOccurs="0"/><xsd:element name="GAD_NAME" type="xsd:string" minOccurs="0"/><xsd:element name="COST_DEPT" type="xsd:string" minOccurs="0"/><xsd:element name="DEPT_NAME" type="xsd:string" minOccurs="0"/><xsd:element name="COST_EMP" type="xsd:string" minOccurs="0"/><xsd:element name="EMP_NAME" type="xsd:string" minOccurs="0"/><xsd:element name="CONN_TYPE" type="xsd:string" minOccurs="0"/><xsd:element name="DNAME1" type="xsd:string" minOccurs="0"/><xsd:element name="CONS_TYPE_A" type="xsd:string" minOccurs="0"/><xsd:element name="DNAME2" type="xsd:string" minOccurs="0"/><xsd:element name="CONS_PRE_SDATE" type="xsd:string" minOccurs="0"/><xsd:element name="CONS_TYPE_B" type="xsd:string" minOccurs="0"/><xsd:element name="CONS_TYPE_BX" type="xsd:string" minOccurs="0"/><xsd:element name="CMNUM" type="xsd:string" minOccurs="0"/><xsd:element name="ARBPL" type="xsd:string" minOccurs="0"/><xsd:element name="KTEXT" type="xsd:string" minOccurs="0"/><xsd:element name="ASE" type="xsd:string" minOccurs="0"/><xsd:element name="WADAT_IST" type="xsd:string" minOccurs="0"/><xsd:element name="CSTAT" type="xsd:string" minOccurs="0"/><xsd:element name="CSTATNAME" type="xsd:string" minOccurs="0"/><xsd:element name="ASSET_TRNS" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:element>
+	</xsd:sequence>
+</xsd:complexType>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="MMMA_200_OS1_MT">
+		<wsdl:documentation/>
+		<wsdl:part name="MMMA_200_OS1_MT" element="MMMA_200_OS1_MT"/>
+	</wsdl:message>
+	<wsdl:message name="MMMA_200_OS2_MT">
+		<wsdl:documentation/>
+		<wsdl:part name="MMMA_200_OS2_MT" element="MMMA_200_OS2_MT"/>
+	</wsdl:message>
+	<wsdl:portType name="MMMA_200_OS1_SI">
+		<wsdl:documentation/>
+		<wsdl:operation name="MMMA_200_OS1_SI">
+			<wsdl:documentation/>
+			<wsp:Policy>
+				<wsp:PolicyReference URI="#OP_MMMA_200_OS1_SI"/>
+			</wsp:Policy>
+			<wsdl:input message="MMMA_200_OS1_MT"/>
+			<wsdl:output message="MMMA_200_OS2_MT"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="MMMA_200_OS1_SIBinding" type="MMMA_200_OS1_SI">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"
+			xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+		<wsdl:operation name="MMMA_200_OS1_SI">
+			<soap:operation soapAction="http://sap.com/xi/WebService/soap1.1"
+				xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+			<wsdl:input>
+				<soap:body use="literal"
+					xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"
+					xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+</wsdl:definitions>

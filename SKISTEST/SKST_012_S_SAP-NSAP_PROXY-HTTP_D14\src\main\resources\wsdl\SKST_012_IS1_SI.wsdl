@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="SKST_012_IS1_SI"
+	xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy"
+	xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+	<wsdl:documentation/>
+	<wsp:UsingPolicy wsdl:required="true"/>
+	<wsp:Policy wsu:Id="OP_SKST_012_IS1_SI"/>
+	<wsdl:types>
+		<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<xsd:element name="SKST_012_IS1_MT" type="SKST_012_IS1_DT"/>
+			<xsd:element name="SKST_012_IS2_MT" type="SKST_012_IS2_DT"/>
+			<xsd:complexType name="SKST_012_IS2_DT">
+	<xsd:sequence>
+		<xsd:element name="Id" type="xsd:string" minOccurs="0"/><xsd:element name="Version" type="xsd:string" minOccurs="0"/><xsd:element name="Name" type="xsd:string" minOccurs="0"/><xsd:element name="Type" type="xsd:string" minOccurs="0"/><xsd:element name="DeployedBy" type="xsd:string" minOccurs="0"/><xsd:element name="DeployedOn" type="xsd:string" minOccurs="0"/><xsd:element name="Status" type="xsd:string" minOccurs="0"/><xsd:element name="ErrorInformation" type="xsd:string" minOccurs="0"/>
+	</xsd:sequence>
+</xsd:complexType><xsd:complexType name="SKST_012_IS1_DT">
+	<xsd:sequence>
+		<xsd:element name="ID" type="xsd:string" minOccurs="0"/>
+	</xsd:sequence>
+</xsd:complexType>
+		</xsd:schema>
+	</wsdl:types>
+	<wsdl:message name="SKST_012_IS1_MT">
+		<wsdl:documentation/>
+		<wsdl:part name="SKST_012_IS1_MT" element="SKST_012_IS1_MT"/>
+	</wsdl:message>
+	<wsdl:message name="SKST_012_IS2_MT">
+		<wsdl:documentation/>
+		<wsdl:part name="SKST_012_IS2_MT" element="SKST_012_IS2_MT"/>
+	</wsdl:message>
+	<wsdl:portType name="SKST_012_IS1_SI">
+		<wsdl:documentation/>
+		<wsdl:operation name="SKST_012_IS1_SI">
+			<wsdl:documentation/>
+			<wsp:Policy>
+				<wsp:PolicyReference URI="#OP_SKST_012_IS1_SI"/>
+			</wsp:Policy>
+			<wsdl:input message="SKST_012_IS1_MT"/>
+			<wsdl:output message="SKST_012_IS2_MT"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="SKST_012_IS1_SIBinding" type="SKST_012_IS1_SI">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"
+			xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+		<wsdl:operation name="SKST_012_IS1_SI">
+			<soap:operation soapAction="http://sap.com/xi/WebService/soap1.1"
+				xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+			<wsdl:input>
+				<soap:body use="literal"
+					xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"
+					xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+</wsdl:definitions>

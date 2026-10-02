@@ -1,0 +1,5 @@
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://example.com/A-DT" targetNamespace="http://example.com/A-DT">
+   <xsd:include schemaLocation="dt://schema?key=A-DT_260602|A-DT_260602" />
+   <xsd:element name="A-MT_260602" type="A-DT_260602" />
+</xsd:schema>

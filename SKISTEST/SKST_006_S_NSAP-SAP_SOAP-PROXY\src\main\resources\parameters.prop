@@ -1,0 +1,11 @@
+#Tue Oct 15 01:06:31 UTC 2024
+SENDER_SYS=NSAP
+BS=BS_QAS_100
+LOC=DEV
+ERP_USER=S4H_USER
+payload_step=G_PAYLOAD_STEP
+ERP_HOST=vhwgcqasci.sap.cncityenergy.com\:44300
+RECV_NAMESPACE=urn\:sap-com\:sprx\:ep\:cust\:SKST_006
+Client_ID=100
+SERVICE_IF=SKST_006_IS1_SI
+Recv_Time_Out=300000

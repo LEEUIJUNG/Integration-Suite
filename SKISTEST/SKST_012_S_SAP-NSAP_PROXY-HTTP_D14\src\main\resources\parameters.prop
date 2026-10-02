@@ -1,0 +1,7 @@
+#Thu Nov 14 04:39:40 UTC 2024
+Authorization=
+RECV_TIMEOUT=300000
+LOCATION_ID=
+RECV_HOST=https\://sksdu-is-dev.apimanagement.ap12.hana.ondemand.com/cpi/api/v1/${property.ID}
+Content-Type=application/json; charset\=utf-8
+RECV_HTTP_HEADERS=Accept|Content-Type

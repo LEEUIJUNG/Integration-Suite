@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!-- 일괄 변경: 레거시 side HTTP "송신" - wsdl:definitions 은 namespace 제거(레거시 송신부도 동일하게 namespace 삭제 필요)
+             레거시 side HTTP "수신" - 변경 없음(기존 namespace 그대로 사용, 레거시 수신부에서는 아무 action 할 필요 없음.) -->
+<!-- 일괄 변경: I/F ID -->
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CEMS_001" >
+
+ <wsdl:types>
+ 
+<!-- 레거시 side wsdl 는  Namespace삭제 하고 사용 ( JSON -> XML 컨버팅시 NS 문제때문에...)
+  <xsd:schema targetNamespace="http://is.co.kr/Sync" xmlns="http://is.co.kr/Sync">
+  <xsd:schema>  
+   -->
+  <xsd:schema>
+  
+<!-- 일괄 변경: 네임스페이스  ( SAP Proxy 송신인 케이스만 적용)
+   Sync NS:    http://is.co.kr/Sync
+   ASync NS:   http://is.co.kr/Async
+ -->
+ 
+<!-- 일괄 변경: I/F ID -->
+	<xsd:element name="CEMS_001_SEND_REQ_MT" type="CEMS_001_SEND_REQ_DT" />
+	<xsd:element name="CEMS_001_SEND_RES_MT" type="CEMS_001_SEND_RES_DT" />
+	
+   <xsd:complexType name="CEMS_001_SEND_REQ_DT">
+		<xsd:sequence>
+<!-- Request Data type 시작 -->	
+
+					<xsd:element name="ROOT">
+						
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="IFCODE" type="IFCODE_DT">
+									
+								</xsd:element>
+								<xsd:element name="DATA">
+									
+									<xsd:complexType>
+										<xsd:sequence>
+											<xsd:element name="LEASE_TYPE">
+												<xsd:simpleType>
+													<xsd:restriction base="xsd:string">
+														 
+													</xsd:restriction>
+												</xsd:simpleType>
+											</xsd:element>
+											<xsd:element name="SAPVENCOD">
+												<xsd:simpleType>
+													<xsd:restriction base="xsd:string">
+														 
+													</xsd:restriction>
+												</xsd:simpleType>
+											</xsd:element>
+											<xsd:element name="ACCCOD">
+												<xsd:simpleType>
+													<xsd:restriction base="xsd:string">
+														 
+													</xsd:restriction>
+												</xsd:simpleType>
+											</xsd:element>
+											<xsd:element name="PJT_NO">
+												<xsd:simpleType>
+													<xsd:restriction base="xsd:string">
+														 
+													</xsd:restriction>
+												</xsd:simpleType>
+											</xsd:element>
+											<xsd:element name="CNTRT_START_DATE">
+												<xsd:simpleType>
+													<xsd:restriction base="xsd:string">
+														 
+													</xsd:restriction>
+												</xsd:simpleType>
+											</xsd:element>
+											<xsd:element name="CNTRT_END_DATE">
+												<xsd:simpleType>
+													<xsd:restriction base="xsd:string">
+														 
+													</xsd:restriction>
+												</xsd:simpleType>
+											</xsd:element>
+											<xsd:element name="MEMO" minOccurs="0">
+												<xsd:simpleType>
+													<xsd:restriction base="xsd:string">
+														 
+													</xsd:restriction>
+												</xsd:simpleType>
+											</xsd:element>
+											<xsd:element name="CUR_CLFC">
+												<xsd:simpleType>
+													<xsd:restriction base="xsd:string">
+														 
+													</xsd:restriction>
+												</xsd:simpleType>
+											</xsd:element>
+											<xsd:element name="EQUIP_CNTRT_AMT">
+												<xsd:simpleType>
+													<xsd:restriction base="xsd:string">
+														 
+													</xsd:restriction>
+												</xsd:simpleType>
+											</xsd:element>
+											<xsd:element name="REGTR_EMPNO" minOccurs="0">	
+												<xsd:simpleType>
+													<xsd:restriction base="xsd:string">
+														 
+													</xsd:restriction>
+												</xsd:simpleType>
+											</xsd:element>
+											<xsd:element name="COMP_CD">
+												<xsd:simpleType>
+													<xsd:restriction base="xsd:string">
+														 
+													</xsd:restriction>
+												</xsd:simpleType>
+											</xsd:element>
+											<xsd:element name="EQUIP_CNTRT_NO">
+												<xsd:simpleType>
+													<xsd:restriction base="xsd:string">
+														 
+													</xsd:restriction>
+												</xsd:simpleType>
+											</xsd:element>
+										</xsd:sequence>
+									</xsd:complexType>
+								</xsd:element>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+			
+	
+<!-- Request Data type 끝 -->
+		</xsd:sequence>
+   </xsd:complexType>
+   
+   
+    <xsd:complexType name="CEMS_001_SEND_RES_DT">
+		<xsd:sequence>
+<!-- Response Data type 시작 -->	
+					<xsd:element name="ROOT">
+						
+						<xsd:complexType>
+							<xsd:sequence>
+								<xsd:element name="DATA">
+									
+									<xsd:complexType>
+										<xsd:sequence>
+											<xsd:element name="STATUS" minOccurs="0">
+												
+												<xsd:simpleType>
+													<xsd:restriction base="xsd:string">
+														 
+													</xsd:restriction>
+												</xsd:simpleType>
+											</xsd:element>
+											<xsd:element name="MSG" minOccurs="0">
+												
+												<xsd:simpleType>
+													<xsd:restriction base="xsd:string">
+														 
+													</xsd:restriction>
+												</xsd:simpleType>
+											</xsd:element>
+											<xsd:element name="LEASE_NO" minOccurs="0">
+												
+												<xsd:simpleType>
+													<xsd:restriction base="xsd:string">
+														 
+													</xsd:restriction>
+												</xsd:simpleType>
+											</xsd:element>
+										</xsd:sequence>
+									</xsd:complexType>
+								</xsd:element>
+							</xsd:sequence>
+						</xsd:complexType>
+					</xsd:element>
+<!-- Response Data type 끝 -->
+		</xsd:sequence>
+   </xsd:complexType>   
+   
+
+<!-- 그외 참조 Data type 시작 --> 
+		<!-- 공통 data Type IFCODE_DT  --> 
+		<xsd:complexType name="IFCODE_DT">
+				
+				<xsd:sequence>
+					<xsd:element name="GUBUN">
+						
+						<xsd:simpleType>
+							<xsd:restriction base="xsd:string">
+								 
+							</xsd:restriction>
+						</xsd:simpleType>
+					</xsd:element>
+					<xsd:element name="LANG" minOccurs="0">
+						
+						<xsd:simpleType>
+							<xsd:restriction base="xsd:string">
+								 
+							</xsd:restriction>
+						</xsd:simpleType>
+					</xsd:element>
+					<xsd:element name="SDATE" minOccurs="0">
+						
+						<xsd:simpleType>
+							<xsd:restriction base="xsd:string">
+								 
+							</xsd:restriction>
+						</xsd:simpleType>
+					</xsd:element>
+					<xsd:element name="STIME" minOccurs="0">
+						
+						<xsd:simpleType>
+							<xsd:restriction base="xsd:string">
+								 
+							</xsd:restriction>
+						</xsd:simpleType>
+					</xsd:element>
+					<xsd:element name="USERCD" minOccurs="0">
+						
+						<xsd:simpleType>
+							<xsd:restriction base="xsd:string">
+								 
+							</xsd:restriction>
+						</xsd:simpleType>
+					</xsd:element>
+					<xsd:element name="SEARCHKEY1" minOccurs="0">
+						
+						<xsd:simpleType>
+							<xsd:restriction base="xsd:string">
+								 
+							</xsd:restriction>
+						</xsd:simpleType>
+					</xsd:element>
+					<xsd:element name="SEARCHKEY2" minOccurs="0">
+						
+						<xsd:simpleType>
+							<xsd:restriction base="xsd:string">
+								 
+							</xsd:restriction>
+						</xsd:simpleType>
+					</xsd:element>
+					<xsd:element name="CRUD">
+						
+						<xsd:simpleType>
+							<xsd:restriction base="xsd:string">
+								 
+							</xsd:restriction>
+						</xsd:simpleType>
+					</xsd:element>
+				</xsd:sequence>
+			</xsd:complexType>
+			
+<!-- 그외 참조 Data type END -->    
+   
+   
+  </xsd:schema>
+ </wsdl:types>
+ 
+ <wsdl:message name="CEMS_001_SEND_REQ_MT">
+  <wsdl:part name="CEMS_001_SEND_REQ_MT" element="CEMS_001_SEND_REQ_MT"/>
+ </wsdl:message>
+ 
+  <wsdl:message name="CEMS_001_SEND_RES_MT">
+  <wsdl:part name="CEMS_001_SEND_RES_MT" element="CEMS_001_SEND_RES_MT"/>
+ </wsdl:message> 
+ 
+ <wsdl:portType name="CEMS_001">
+    <wsdl:operation name="CEMS_001">
+      <wsdl:input message="CEMS_001_SEND_REQ_MT"/>
+      <wsdl:output message="CEMS_001_SEND_RES_MT"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CEMS_001SOAP" type="CEMS_001">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="CEMS_001">
+      <soap:operation soapAction=""/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CEMS_001">
+    <wsdl:port binding="CEMS_001SOAP" name="CEMS_001SOAP">
+    <!-- Proxy case 에서는 사용되지 않음. -->
+      <soap:address location="https://sk-ep/cxf/CEMS_001"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: A-DT
+Bundle-SymbolicName: A-DT
+Bundle-Version: 1.0.1
+SAP-BundleType: ServiceInterface
+SAP-NodeType: IFLMAP
+Import-Package: 
+Provide-Capability: serviceinterface.A-DT;version:Version="1.0.1"
+Require-Capability: messagetype.A-MT_260602;resolution:=optional;bundleT
+ ype:String="MessageType";source:String="reference"
+
